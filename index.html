@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>HTML Project</title>
+</head>
+
+<body>
+    <!--Header(start)-->
+    <table id="header" border="0"
+           width="100%" height="60" cellpadding="0"
+           cellspacing="0" bgcolor="white">
+        <tr>
+            <td>
+                <table border="0" cellpadding="15"
+                       cellspacing="0" width="90%"
+                       align="center">
+                    <tr>
+                        <td>
+                            &nbsp;
+
+                        </td>
+
+                        <td>
+                            <font face="Comic sans MS" size="6">
+                                <b></b>
+                            </font>
+                        </td>
+
+                        <td width="15%">
+                            &nbsp;
+                        </td>
+
+                        <td>
+                            <a href="#home"
+                               style="text-decoration:none">
+                                <font face="Verdana"
+                                      size="5" color=black>
+                                    Home
+                                </font>
+                            </a>
+                        </td>
+
+                        <td>
+                            |
+                        </td>
+
+                        <td>
+                            <a href="#about"
+                               style="text-decoration:none">
+                                <font face="Verdana"
+                                      size="5" color=black>
+                                    About
+                                </font>
+                            </a>
+                        </td>
+
+                        <td>
+                            |
+                        </td>
+
+                        <td>
+                            <a href="#projects"
+                               style="text-decoration:none">
+                                <font face="Verdana"
+                                      size="5" color=black>
+                                    Projects
+                                </font>
+                            </a>
+                        </td>
+
+                        <td>
+                            |
+                        </td>
+
+                        <td>
+                            <a href="#achievements"
+                               style="text-decoration:none">
+                                <font face="Verdana"
+                                      size="5" color=black>
+                                    Achievements
+                                </font>
+                            </a>
+                        </td>
+
+                        <td>
+                            |
+                        </td>
+
+                        <td>
+                            <a href="#contact"
+                               style="text-decoration:none">
+                                <font face="Verdana"
+                                      size="5" color=black>
+                                    Contact
+                                </font>
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <!--Header(end)-->
+
+<!--Home(start)-->
+
+<table id="home" border="1" width="100%" cellpadding="200" cellspacing="0" bgcolor="#0b0a0a" align="top">
+    <tr>
+        <td>
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" align="top">
+                <tr>
+                    <td align="top" valign="top">
+                        <style>
+                            /* Style for Typewriter */
+                            body {
+                                padding-top: 0em;
+                                display: top;
+                                justify-content: top;
+                            }
+
+                            /* Button Style for Download PDF */
+                            .download-btn {
+                                position: absolute;
+                                top: 495px;
+                                right: 1115px;
+                                background-color: #4CAF50;
+                                color: white;
+                                font-family: Verdana, sans-serif;
+                                font-size: 16px;
+                                padding: 10px 20px;
+                                border: none;
+                                cursor: pointer;
+                                border-radius: 5px;
+                                text-align: center;
+                            }
+
+                            .download-btn:hover {
+                                background-color: #45a049; /* Darker green on hover */
+                            }
+
+                            /* Typewriter text color change to dark orange */
+                            .typewrite > .wrap {
+                                border-right: 0.08em solid white; /* Set blinking cursor color to white */
+                                color: #0b0a0a; /* Set text color to dark orange */
+                                animation: blink-caret 0.75s step-end infinite; /* Apply blinking effect to the cursor */
+                            }
+
+                            /* Remove the underline and default purple color of the <a> tag */
+                            .typewrite a {
+                                text-decoration: none; /* Remove underline */
+                                color: #0b0a0a; /* Set link color to dark orange */
+                            }
+
+                            /* Blinking effect for the cursor */
+                            @keyframes blink-caret {
+                                50% {
+                                    border-color: transparent;
+                                }
+                            }
+
+                            /* Oval-shaped image */
+                            .oval-img {
+                                position: absolute;
+                                top: 200px;
+                                right: 200px;
+                                width: 400px; /* Set the width */
+                                height: 400px; /* Set the height */
+                                border-radius: 10%; /* Makes the image oval-shaped */
+                                object-fit: cover; /* Ensures the image maintains aspect ratio */
+                                margin-top: 20px; /* Space above the image */
+                                display: block;
+                                margin-left: auto;
+                                margin-right: auto;
+                                z-index: 2; /* Ensure the image appears above the hexagon */
+                            }
+
+                            /* Dark orange hexagon behind the image */
+                            .hexagon {
+                                position: absolute;
+                                top: 160px; /* Adjust to fit behind the image */
+                                right: 235px; /* Adjust to align with the image */
+                                width: 300px;
+                                height: 173px;
+                                background-color: #0b0a0a; /* Dark orange color */
+                                clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); /* Hexagon shape */
+                                z-index: 1; /* Position behind the image */
+                            }
+
+                            /* Add space below the download button */
+                            .space-below {
+                                margin-top: 40px; /* Adds space below the button */
+                            }
+
+                            /* Same font style for name as typewriter text */
+                            .name-style {
+                                font-family: Verdana, sans-serif;
+                                font-size: 25px; /* You can adjust the size as needed */
+                                color: rgb(253, 252, 252);
+                                font-weight: bold;
+                            }
+                        </style>
+
+                        <script>
+                            <!-- Typewriter -->
+                            var TxtType = function(el, toRotate, period) {
+                                this.toRotate = toRotate;
+                                this.el = el;
+                                this.loopNum = 0;
+                                this.period = parseInt(period, 10) || 2000;
+                                this.txt = '';
+                                this.tick();
+                                this.isDeleting = false;
+                            };
+
+                            TxtType.prototype.tick = function() {
+                                var i = this.loopNum % this.toRotate.length;
+                                var fullTxt = this.toRotate[i];
+
+                                if (this.isDeleting) {
+                                    this.txt = fullTxt.substring(0, this.txt.length - 1);
+                                } else {
+                                    this.txt = fullTxt.substring(0, this.txt.length + 1);
+                                }
+
+                                this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+                                var that = this;
+                                var delta = 200 - Math.random() * 100;
+
+                                if (this.isDeleting) { delta /= 2; }
+
+                                if (!this.isDeleting && this.txt === fullTxt) {
+                                    delta = this.period;
+                                    this.isDeleting = true;
+                                } else if (this.isDeleting && this.txt === '') {
+                                    this.isDeleting = false;
+                                    this.loopNum++;
+                                    delta = 500;
+                                }
+
+                                setTimeout(function() {
+                                    that.tick();
+                                }, delta);
+                            };
+
+                            window.onload = function() {
+                                var elements = document.getElementsByClassName('typewrite');
+                                for (var i=0; i<elements.length; i++) {
+                                    var toRotate = elements[i].getAttribute('data-type');
+                                    var period = elements[i].getAttribute('data-period');
+                                    if (toRotate) {
+                                      new TxtType(elements[i], JSON.parse(toRotate), period);
+                                    }
+                                }
+                                // INJECT CSS
+                                var css = document.createElement("style");
+                                css.type = "text/css";
+                                css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid white; color: #FF7F00; animation: blink-caret 0.75s step-end infinite;}"; /* Ensure the cursor blinks with white color */
+                                document.body.appendChild(css);
+                            };
+                        </script>
+
+                        <font face="Verdana" size="4"  color="white">
+                            Hello,It's Me
+                        <hr color="#0b0a0a">
+                        <br>
+                        
+                        <!-- Name Styled with Typewriter Font -->
+                        <span class="name-style">GOWTHAMAPTATHEEP VENKATACHALAM</span>
+                        <hr color="#0b0a0a">
+                        <br>
+
+                        <!-- Typewriter Effect -->
+                        <h1>
+                            <font face="Verdana" size="6">
+                            <a href="" class="typewrite"  data-period="2000" data-type='[ "UI/UX designer", "Front end developer" ]'>
+                            
+                            </a>
+                          </h1>
+
+                        <h2>
+                            <font face="Verdana" size="6">
+                                <!-- Freelance Programmer -->
+                            </font>
+                        </h2>
+
+                        <!-- Oval Image -->
+                        <img src="gp.png" alt="Description of the image" width="300" height="200" class="oval-img">
+
+
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- Download PDF Button -->
+<button class="download-btn space-below" onclick="window.location.href='https://tinyurl.com/427tht92'">
+    Download Resume
+</button>
+
+<!--Home(end)-->
+
+
+
+
+
+
+    <!--About(start)-->
+    <table id="about" border="0" width="100%"
+        cellpadding="0" cellspacing="0" bgcolor="#0b0a0a">
+        <tr>
+            <td>
+                <table border="0" cellpadding="15"
+                    cellspacing="0" width="80%" align="center">
+                    <tr>
+                        <td height="180" align="center"
+                            valign="middle" colspan="2">
+                            <font face="Verdana" size="7"
+                                color="#FF7F00">
+                                About Me
+                            </font>
+                            <hr color="#FF7F00" width="90">
+                        </td>
+                    </tr>
+
+                        <td width="70%">
+                            <font face="Verdana" size="4" align="center" 
+                                color="white">
+                               About Me
+                                        Hello! I’m Gowthamapratheep V, an aspiring UI/UX designer and front-end developer currently pursuing my Master’s in Computer Applications (MCA). With a strong foundation in both design principles and coding, I strive to create user-centered digital experiences that are both functional and visually appealing.
+                           <hr color="#0b0a0a">
+                              My Journey
+                                        During my MCA studies, I discovered my passion for design and development. I began exploring the world of UI/UX, where I learned how to bridge the gap between users and technology. My coursework has provided me with a solid understanding of computer science fundamentals, while my hands-on projects have honed my skills in design thinking and web development.
+                                <hr color="#0b0a0a">
+                              My Approach
+                                        I believe that great design starts with empathy. I prioritize understanding user needs through research and testing, ensuring that every project is grounded in real user insights. My goal is to create intuitive interfaces that enhance usability and foster engagement.
+                                <hr color="#0b0a0a">
+                                <br>
+                            </font>
+                        </td>
+                    </tr>
+                </table>
+                <hr color="#0b0a0a">
+                <hr color="#0b0a0a">
+                <hr color="#0b0a0a">
+            </td>
+            </td>
+        </tr>
+    </table>
+    <!--About(end)-->
+
+
+    <!--Projects(start)-->
+    <table id="projects" border="0" width="100%"
+        cellpadding="0" cellspacing="0" bgcolor="#0b0a0a">
+        <tr>
+            <td>
+                <table border="0" cellpadding="15"
+                    cellspacing="0" width="80%" align="center">
+                    <tr>
+                        <td height="180" align="center"
+                            valign="middle" colspan="2">
+                            <font face="Verdana" size="7"
+                                color="#FF7F00">
+                                Projects
+                            </font>
+                            <hr color="#FF7F00" width="90">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td height="10">
+                            <font face="Times New Roman" text-align: left;
+                                size="5" color="white">
+                               
+                                    <h3>
+                                        DT Project:
+                                     
+                                    </h3>
+                                 <li>
+                                        Student Hostal Ghate Pass Management System
+                                 </li>
+                                <hr color="#0b0a0a">
+                                <hr color="#0b0a0a">
+                                <hr color="#0b0a0a">
+                                <hr color="#0b0a0a">
+                            </font>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+        </tr>
+    </table>
+    <!--Projects(end)-->
+
+    <!--Achievement(start)-->
+
+    <table id="achievements" border="0" width="100%"
+        cellpadding="0" cellspacing="0" bgcolor="#0b0a0a">
+        <tr>
+            <td>
+                <table border="0" cellpadding="15"
+                    cellspacing="0" width="80%" align="center">
+                    <tr>
+                                                <td height="180" align="center"
+                            valign="middle" colspan="2">
+                            <br>
+                            <font face="Verdana" size="7"
+                                color="#FF7F00">
+                                Achievements and Certifications
+                                <hr color="#FFA500" width="200">
+                            </font>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <font face="Verdana" size="4" color="white">
+                                <ul>
+                                    <li>
+                                        <b>Course Certifications.</b>
+                                        <ul><br>
+                                            <li>
+                                                Certification of complete Internet of Things on Swayam nptel and Achieved Elite Batch
+                                                <li>
+                                                Completed a IBM practitioner and Co-creator course in Design thinking
+                                            </li>
+                                            <li>
+                                                Completed a Brahmagnanam course and Diploma in yoga for human excellence
+                                                 </li>
+                                        </ul>
+                                    </li><br>
+                                    <li>
+                                        <hr color="#0b0a0a">
+                                        <hr color="#0b0a0a">
+                                        <hr color="#0b0a0a">
+                                        <b>Achievement.</b>
+                                        <ul><br>
+                                            <li>
+                                               Publish a Journal Paper Using AES algorithm and Design Thinking Framework for E-commerce Platform
+                                            </li>
+                                             <li>
+                                            Second Prize in Word Hunt
+                                            Outer College Event,"Qutrix 2K24"
+                                            </li>
+                                            <li>
+                                                Present a paper in National conference on recent trends in Information Technology about Robotics
+                                               
+                                            </li>                            
+                                            <hr color="#0b0a0a">
+                                            <hr color="#0b0a0a">
+                                            <hr color="#0b0a0a">
+                                            <hr color="#0b0a0a">
+                                            <hr color="#0b0a0a">
+                                        </ul>
+                                    </li>
+
+                                </ul>
+
+                            </font>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <!--Achievement(end)-->
+
+
+    <!--Contact(start)-->
+   <table id="contact" border="0" width="100%"
+    cellpadding="0" cellspacing="0" bgcolor="grey">
+    <tr>
+        <td>
+            <table border="0" cellpadding="15"
+                cellspacing="0" width="80%" align="center">
+                <tr>
+                    <td height="180" align="center"
+                        valign="middle" colspan="2">
+                        <font face="Verdana" size="7"
+                            color="black">
+                            Contact
+                        </font>
+                        <hr color="black" width="90">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center" valign="top">
+                        <table border="0" width="50%" cellpadding="15"
+                            cellspacing="0" align="center" bgcolor="black">
+                            <tr>
+                                <td width="30%">
+                                    <hr color="black">
+                                    <font face="Verdana" size="4"
+                                        color="#ffffff">
+                                        Name
+                                    </font>
+                                </td>
+                                <td width="70%">
+                                    <font face="Verdana" size="4"
+                                        color="#ffffff">
+                                        <input type="text" size="40">
+                                    </font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="30%">
+                                    <font face="Verdana" size="4"
+                                        color="#ffffff">
+                                        Email
+                                    </font>
+                                </td>
+                                <td width="70%">
+                                    <font face="Verdana" size="4"
+                                        color="#ffffff">
+                                        <input type="email" size="40">
+                                    </font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="30%">
+                                    <font face="Verdana" size="4"
+                                        color="#ffffff">
+                                        Number
+                                    </font>
+                                </td>
+                                <td width="70%">
+                                    <font face="Verdana" size="4"
+                                        color="#ffffff">
+                                        <input type="number" size="12">
+                                    </font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="30%">
+                                    <font face="Verdana" size="4"
+                                        color="#ffffff">
+                                        Message
+                                    </font>
+                                </td>
+                                <td width="70%">
+                                    <font face="Verdana" size="4"
+                                        color="#ffffff">
+                                        <textarea rows="5"
+                                            cols="37">
+                                        </textarea>
+                                    </font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="30%">
+                                    &nbsp;
+                                </td>
+                                <td width="70%">
+                                    <!-- Submit Button -->
+                                    <button type="Submit">
+                                        <font face="Verdana"
+                                            size="4" color="black">
+                                            <b>Submit</b>
+                                        </font>
+                                    </button>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <!-- Download PDF Button -->
+                                    <button type="button" onclick="window.location.href='https://tinyurl.com/427tht92'">
+                                        <font face="Verdana" size="4" color="black">
+                                            <b>Download Resume</b>
+                                        </font>
+                                    </button>
+                                    <hr color="black">
+                                    <hr color="black">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        &nbsp;
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+    <!--Contact(end)-->
+
+
+    <!--Footer1(start)-->
+    <table id="footer" border="0" width="100%"
+        cellpadding="0" cellspacing="0" bgcolor="white">
+        <tr>
+            <td>
+                <table border="0" cellpadding="15"
+                    cellspacing="0" width="65%" align="center">
+                    <tr>
+                        <td width="13%" valign="top">
+                            <b>LinkedIn</b>
+                           <a href="https://www.linkedin.com/in/gowthamapratheep/" style="text-decoration:none">
+                                ➲
+                            </a>
+
+                        </td>
+
+                        <td>
+                           
+                        </td>
+
+                        <td width="25%" align="center" valign="top">
+                            <b>GitHub</b>
+                            <a href="https://github.com/gowthamvgp" style="text-decoration:none">
+                                ➲
+                            </a>
+                        </td>
+                        <td>
+                        </td>
+                        <td width="25%" align="center" valign="top">
+                            <b>My blog</b>
+                            <a href="https://gowthamapratheep.wixstudio.com/mysite" style="text-decoration:none">
+                                ➲
+                            </a>
+                        </td>
+                        <td>
+                        </td>
+                        <td width="12%" valign="top">
+                            <b>Leet code</b>
+                            <a href="https://leetcode.com/u/gowthamapratheep/" style="text-decoration:none">
+                                ➲
+                            </a>
+                        </td>
+
+                        <td>
+                           
+                        </td>
+
+                       
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <!--Footer1(end)-->
+
+
+ <!--Footer2(start)-->
+   <footer class="footer2">
+    <div class="footer2-content">
+                                <font face="Verdana" size="6"
+                            color="#FF7F00">
+                            Connect with me
+                        </font> <hr color="#FF7F00" width="150">
+                        <br>
+         <font face="Verdana" size="6" color="white">
+                                    Name:
+                                </font>
+                                <font face="Verdana" size="5" color="white">Gowthamapratheep Venkatachalam</font>
+                            </font><br>
+         <font face="Verdana" size="6" color="white">
+                                    Email:
+                                </font>
+                                <font face="Verdana" size="5" color="white">gowthamapratheep@gmail.com</font>
+                            </font> <br>
+                             <font face="Verdana" size="6" color="white">
+                                    Contact:
+                                </font>
+                                <font face="Verdana" size="5" color="white">9789238880</font>
+                            </font>
+    </div>
+    <div class="footer2-bottom"><br>
+        <p>&copy; 2024 gowtham. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<style>
+    .footer2 {
+        background-color: #0b0a0a;
+        color: white;
+        padding: 30px;
+        text-align: center;
+    }
+    .footer2-content {
+        margin-bottom: 20px;
+    }
+    .footer2 input, .footer2 textarea {
+        width: 90%;
+        padding: 12px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+    }
+    .footer2 button {
+        background-color: #3498db;
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .footer2 button:hover {
+        background-color: #2980b9;
+    }
+</style>
+
+<!--Footer2(end)-->
+</body>
+
+</html>
